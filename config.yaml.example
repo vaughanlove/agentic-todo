@@ -1,0 +1,66 @@
+# Agentic Todo Configuration
+
+# Linear Configuration
+linear:
+  workspace_id: "your-workspace-id"
+  team_id: "your-team-id"
+  default_project_id: "your-project-id"
+
+# Signal Configuration
+signal:
+  # Path to signal-cli executable
+  cli_path: "/usr/local/bin/signal-cli"
+  # Account to use (phone number)
+  account: "+1234567890"
+  # Default recipient
+  recipient: "+0987654321"
+  # Signal message polling interval (seconds)
+  poll_interval: 5.0
+
+# Claude Configuration
+claude:
+  model: "claude-sonnet-4-5-20250929"
+  max_tokens: 4096
+  temperature: 0.7
+  # System prompt for the agent
+  system_prompt: |
+    You are a helpful task management assistant. You help users manage their Linear tasks via Signal messages.
+
+    You can:
+    - Create new tasks
+    - Update existing tasks
+    - List tasks
+    - Search for tasks
+    - Mark tasks as complete
+
+    Always be concise and user-friendly in your responses.
+
+# Queue Configuration
+queue:
+  # Maximum concurrent message processing
+  max_workers: 3
+  # Queue size limit
+  max_size: 100
+  # Message processing timeout (seconds)
+  timeout: 30.0
+
+# Error Handling
+error_handling:
+  # Send error messages to user
+  notify_user: true
+  # Include error details in user notifications
+  include_details: false
+  # Retry configuration
+  retry:
+    max_attempts: 3
+    base_delay: 1.0
+    max_delay: 60.0
+    exponential_backoff: true
+
+# Logging
+logging:
+  level: "INFO"
+  format: "json"
+  file: "logs/app.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5

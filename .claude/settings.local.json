@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(chmod:*)",
+      "Bash(make setup:*)",
+      "Bash(source:*)",
+      "Bash(export LINEAR_API_KEY)",
+      "Bash(./venv/bin/python:*)",
+      "Bash(signal-cli:*)",
+      "Bash(kill:*)"
+    ]
+  }
+}
